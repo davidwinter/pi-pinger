@@ -5,7 +5,7 @@ RUN which crond && \
     rm -rf /var/spool/cron/crontabs/root && \
     echo '* * * * * /crontab.sh' > /var/spool/cron/crontabs/root
 
-RUN apk --no-cache add curl
+RUN apk --no-cache add curl findutils
 
 COPY crontab.sh /crontab.sh
 COPY entrypoint.sh /entrypoint.sh
