@@ -1,6 +1,6 @@
 #!/bin/sh
 
-env >> /etc/environment
+# env >> /etc/environment
 
 echo "$@"
 exec "$@"
