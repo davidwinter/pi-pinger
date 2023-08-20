@@ -1,0 +1,7 @@
+services:
+  pi-pinger:
+    build:
+      context: .
+    environment:
+      PING_URLS: "${PING_URLS}"
+    restart: always
