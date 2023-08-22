@@ -1,0 +1,9 @@
+services:
+  pi-pinger:
+    image: ghcr.io/davidwinter/pi-pinger:main
+    environment:
+      PING_URLS: |
+        https://-nosnch.in/example
+        https://-push.statuscake.com/?PK=example&TestID=example&time=0
+        https://-cronitor.link/p/example/my-pi
+    restart: always

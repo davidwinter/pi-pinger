@@ -8,28 +8,20 @@ Having a home lab Raspberry Pi is great! Though it sucks if it goes down and you
 
 ## Usage
 
-Create a copy of the `.env.example` file to `.env`:
-
 ```sh
-cp .env.example .env
+curl https://raw.githubusercontent.com/davidwinter/pi-pinger/main/compose.prod.yml -o compose.yml
 ```
 
-Edit `.env` and add a URL per line for the `PUSH_URLS` value, for example:
+Edit the ping URLs value in `compose.yml` with one or more URLs you wish to use. I would recommend any or all of the below, which offer a free plan with at least one free monitor that you can set as a Push test alert:
 
-```sh
-PING_URLS="https://nosnch.in/example
-https://push.statuscake.com/?PK=example&TestID=example&time=0
-https://cronitor.link/p/example/my-pi"
-```
+- 🍰 [Status Cake](https://www.statuscake.com/)
+- 🕵️ [Dead Man's Snitch](https://deadmanssnitch.com)
+- 📈 [Cronitor](https://cronitor.io)
 
-Run `pi-pinger` with:
+Then run:
 
 ```sh
 docker compose up -d
 ```
 
-So long as your Docker install is enabled to start at boot time, then `pi-pinger`` will launch with reboots automatically.
-
-***
-
-Running crons within docker: https://blog.thesparktree.com/cron-in-docker
+So long as your Docker install is enabled to start at boot time, then `pi-pinger` will launch with reboots automatically.
